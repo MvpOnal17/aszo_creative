@@ -1,6 +1,4 @@
-Thanks for downloading this template!
 
-Template Name: iLanding
-Template URL: https://bootstrapmade.com/ilanding-bootstrap-landing-page-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+Name: ASZO Creative
+URL: localhost:8080/
+Author: aszocreative.co
