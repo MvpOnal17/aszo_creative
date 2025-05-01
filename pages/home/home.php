@@ -707,7 +707,7 @@ $team_query = mysqli_query($conn, "SELECT * FROM our_team ORDER BY id ASC");
                                 <div class="error-message"></div>
                                 <div class="sent-message">Your message has been sent. Thank you!</div>
 
-                                <button type="submit" class="btn">Send Message</button>
+                                <button type="submit" class="btn">Kirim Pesan</button>
                             </div>
 
                         </div>
