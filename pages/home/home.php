@@ -15,6 +15,7 @@ $row = mysqli_fetch_assoc($result);
                         <i class="bi bi-gear-fill me-2"></i>
                         <?= $row['company_badge'] ?>
                     </div>
+
                     <h1 class="mb-4">
                         <?= $row['title_line1'] ?><br>
                         <?= $row['title_line2'] ?><br>
@@ -61,17 +62,17 @@ $row = mysqli_fetch_assoc($result);
             while ($row = mysqli_fetch_assoc($result)) {
                 $icon = $icons[$index % count($icons)];
             ?>
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="<?= $icon ?>"></i>
-                        </div>
-                        <div class="stat-content">
-                            <h4><?= $row['title'] ?></h4>
-                            <p class="mb-0"><?= $row['description'] ?></p>
-                        </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="<?= $icon ?>"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h4><?= $row['title'] ?></h4>
+                        <p class="mb-0"><?= $row['description'] ?></p>
                     </div>
                 </div>
+            </div>
             <?php
                 $index++;
             }
@@ -99,18 +100,19 @@ $features_right = mysqli_query($conn, "SELECT feature_text FROM about_features W
                 <h2 class="about-title"><?= htmlspecialchars($about['about_title']) ?></h2>
                 <p class="about-description"><?= nl2br($about['about_description']) ?></p>
 
+                <h2>Mengapa Kami?</h2>
                 <div class="row feature-list-wrapper">
                     <div class="col-md-6">
                         <ul class="feature-list">
                             <?php while ($f = mysqli_fetch_assoc($features_left)): ?>
-                                <li><i class="bi bi-check-circle-fill"></i> <?= htmlspecialchars($f['feature_text']) ?></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <?= htmlspecialchars($f['feature_text']) ?></li>
                             <?php endwhile; ?>
                         </ul>
                     </div>
                     <div class="col-md-6">
                         <ul class="feature-list">
                             <?php while ($f = mysqli_fetch_assoc($features_right)): ?>
-                                <li><i class="bi bi-check-circle-fill"></i> <?= htmlspecialchars($f['feature_text']) ?></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <?= htmlspecialchars($f['feature_text']) ?></li>
                             <?php endwhile; ?>
                         </ul>
                     </div>
@@ -179,7 +181,7 @@ $icons = [
 <!-- Features 2 Section -->
 <section id="features" class="features-2 section">
     <div class="container section-title" data-aos="fade-up">
-        <h2>What You Get?</h2>
+        <h2>Apa yang kamu dapatkan?</h2>
         <p>Kami hadir memberikan berbagai keunggulan untuk solusi digital Anda.</p>
     </div>
 
@@ -191,17 +193,17 @@ $icons = [
                 <?php $i = 0;
                 $delay = 200;
                 while ($row = mysqli_fetch_assoc($left)) : ?>
-                    <div class="feature-item text-end mb-5" data-aos="fade-right" data-aos-delay="<?= $delay ?>">
-                        <div class="d-flex align-items-center justify-content-end gap-4">
-                            <div class="feature-content">
-                                <h3><?= $row['title'] ?></h3>
-                                <p><?= $row['description'] ?></p>
-                            </div>
-                            <div class="feature-icon flex-shrink-0">
-                                <i class="<?= $icons[$i] ?? 'bi bi-star' ?>"></i>
-                            </div>
+                <div class="feature-item text-end mb-5" data-aos="fade-right" data-aos-delay="<?= $delay ?>">
+                    <div class="d-flex align-items-center justify-content-end gap-4">
+                        <div class="feature-content">
+                            <h3><?= $row['title'] ?></h3>
+                            <p><?= $row['description'] ?></p>
+                        </div>
+                        <div class="feature-icon flex-shrink-0">
+                            <i class="<?= $icons[$i] ?? 'bi bi-star' ?>"></i>
                         </div>
                     </div>
+                </div>
                 <?php $delay += 100;
                     $i++;
                 endwhile; ?>
@@ -211,7 +213,7 @@ $icons = [
             <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
                 <div class="phone-mockup text-center">
                     <?php if ($image): ?>
-                        <img src="Aaszo/<?= $image['image_path'] ?>" alt="Mockup Image" class="img-fluid">
+                    <img src="Aaszo/<?= $image['image_path'] ?>" alt="Mockup Image" class="img-fluid">
                     <?php endif; ?>
                 </div>
             </div>
@@ -220,17 +222,17 @@ $icons = [
             <div class="col-lg-4">
                 <?php $delay = 200;
                 while ($row = mysqli_fetch_assoc($right)) : ?>
-                    <div class="feature-item mb-5" data-aos="fade-left" data-aos-delay="<?= $delay ?>">
-                        <div class="d-flex align-items-center gap-4">
-                            <div class="feature-icon flex-shrink-0">
-                                <i class="<?= $icons[$i] ?? 'bi bi-star' ?>"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3><?= $row['title'] ?></h3>
-                                <p><?= $row['description'] ?></p>
-                            </div>
+                <div class="feature-item mb-5" data-aos="fade-left" data-aos-delay="<?= $delay ?>">
+                    <div class="d-flex align-items-center gap-4">
+                        <div class="feature-icon flex-shrink-0">
+                            <i class="<?= $icons[$i] ?? 'bi bi-star' ?>"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3><?= $row['title'] ?></h3>
+                            <p><?= $row['description'] ?></p>
                         </div>
                     </div>
+                </div>
                 <?php $delay += 100;
                     $i++;
                 endwhile; ?>
@@ -314,46 +316,46 @@ $icons = [
 
         <div class="swiper init-swiper">
             <script type="application/json" class="swiper-config">
-                {
-                    "loop": true,
-                    "speed": 600,
-                    "autoplay": {
-                        "delay": 5000
+            {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                    "delay": 5000
+                },
+                "slidesPerView": "auto",
+                "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                },
+                "breakpoints": {
+                    "320": {
+                        "slidesPerView": 2,
+                        "spaceBetween": 40
                     },
-                    "slidesPerView": "auto",
-                    "pagination": {
-                        "el": ".swiper-pagination",
-                        "type": "bullets",
-                        "clickable": true
+                    "480": {
+                        "slidesPerView": 3,
+                        "spaceBetween": 60
                     },
-                    "breakpoints": {
-                        "320": {
-                            "slidesPerView": 2,
-                            "spaceBetween": 40
-                        },
-                        "480": {
-                            "slidesPerView": 3,
-                            "spaceBetween": 60
-                        },
-                        "640": {
-                            "slidesPerView": 4,
-                            "spaceBetween": 80
-                        },
-                        "992": {
-                            "slidesPerView": 6,
-                            "spaceBetween": 120
-                        }
+                    "640": {
+                        "slidesPerView": 4,
+                        "spaceBetween": 80
+                    },
+                    "992": {
+                        "slidesPerView": 6,
+                        "spaceBetween": 120
                     }
                 }
+            }
             </script>
             <div class="swiper-wrapper align-items-center mb-5">
                 <?php
                 $logos = mysqli_query($conn, "SELECT * FROM client_logos ORDER BY id ASC");
                 while ($logo = mysqli_fetch_assoc($logos)) {
                 ?>
-                    <div class="swiper-slide">
-                        <img src="Aaszo/<?= $logo['image_path'] ?>" class="img-fluid" alt="Client Logo">
-                    </div>
+                <div class="swiper-slide">
+                    <img src="Aaszo/<?= $logo['image_path'] ?>" class="img-fluid" alt="Client Logo">
+                </div>
                 <?php } ?>
             </div>
 
@@ -372,7 +374,15 @@ $icons = [
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
         <h2>Studi Kasus</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>Di ASZO Creative, setiap proyek bukan sekadar pekerjaan—melainkan solusi nyata atas tantangan digital yang
+            dihadapi klien kami.
+            Melalui pendekatan Design Thinking, kami menyelami kebutuhan, merancang strategi, dan membangun solusi yang
+            berdampak langsung.
+
+            Di bawah ini, kami bagikan proses, tantangan, dan hasil dari proyek-proyek terbaik yang telah kami
+            selesaikan.
+            Dari instansi pemerintahan hingga brand lokal, inilah bagaimana kami membantu mereka bertransformasi secara
+            digital.</p>
     </div><!-- End Section Title -->
 
     <?php
@@ -382,79 +392,79 @@ $icons = [
     <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row g-4">
             <?php while ($row = mysqli_fetch_assoc($studi_kasus_query)) { ?>
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card p-4 border rounded-4 shadow-sm bg-white">
-                        <!-- Thumbnail -->
-                        <div class="mb-3">
-                            <img src="Aaszo/<?= $row['thumbnail_path'] ?>" alt="Thumbnail"
-                                class="img-fluid rounded-4 w-100">
-                        </div>
-
-                        <!-- Judul -->
-                        <h3 class="fw-bold mb-1"><?= $row['title'] ?></h3>
-
-                        <!-- Tanggal -->
-                        <small class="text-muted d-block mb-2"><?= $row['date_display'] ?></small>
-
-                        <!-- Deskripsi -->
-                        <p class="mb-3"><?= $row['description'] ?></p>
-
-                        <!-- Button -->
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalStudi<?= $row['id'] ?>">
-                            Read More <i class="bi bi-arrow-right"></i>
-                        </a>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card p-4 border rounded-4 shadow-sm bg-white">
+                    <!-- Thumbnail -->
+                    <div class="mb-3">
+                        <img src="Aaszo/<?= $row['thumbnail_path'] ?>" alt="Thumbnail"
+                            class="img-fluid rounded-4 w-100">
                     </div>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="modalStudi<?= $row['id'] ?>" tabindex="-1">
-                        <div class="modal-dialog modal-xl modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header border-0">
-                                    <h5 class="modal-title fw-bold"><?= $row['modal_title'] ?></h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Tutup"></button>
+                    <!-- Judul -->
+                    <h3 class="fw-bold mb-1"><?= $row['title'] ?></h3>
+
+                    <!-- Tanggal -->
+                    <small class="text-muted d-block mb-2"><?= $row['date_display'] ?></small>
+
+                    <!-- Deskripsi -->
+                    <p class="mb-3"><?= $row['description'] ?></p>
+
+                    <!-- Button -->
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalStudi<?= $row['id'] ?>">
+                        Read More <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modalStudi<?= $row['id'] ?>" tabindex="-1">
+                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header border-0">
+                                <h5 class="modal-title fw-bold"><?= $row['modal_title'] ?></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Tutup"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-4 text-center">
+                                    <img src="Aaszo/<?= $row['modal_image_path'] ?>" alt="Preview"
+                                        class="img-fluid rounded-4 w-100">
                                 </div>
-                                <div class="modal-body">
-                                    <div class="mb-4 text-center">
-                                        <img src="Aaszo/<?= $row['modal_image_path'] ?>" alt="Preview"
-                                            class="img-fluid rounded-4 w-100">
+                                <hr>
+                                <div class="row text-center mt-5">
+                                    <div class="col-md-4 mb-4">
+                                        <div class="mb-3">
+                                            <i class="<?= $row['modal_icon_1'] ?> fa-3x text-primary"></i>
+                                        </div>
+                                        <h5 class="text-primary fw-bold">Pelaporan Publik Realtime</h5>
+                                        <p class="mb-0"><?= $row['modal_description_1'] ?></p>
                                     </div>
-                                    <hr>
-                                    <div class="row text-center mt-5">
-                                        <div class="col-md-4 mb-4">
-                                            <div class="mb-3">
-                                                <i class="<?= $row['modal_icon_1'] ?> fa-3x text-primary"></i>
-                                            </div>
-                                            <h5 class="text-primary fw-bold">Pelaporan Publik Realtime</h5>
-                                            <p class="mb-0"><?= $row['modal_description_1'] ?></p>
+                                    <div class="col-md-4 mb-4">
+                                        <div class="mb-3">
+                                            <i class="<?= $row['modal_icon_2'] ?> fa-3x text-primary"></i>
                                         </div>
-                                        <div class="col-md-4 mb-4">
-                                            <div class="mb-3">
-                                                <i class="<?= $row['modal_icon_2'] ?> fa-3x text-primary"></i>
-                                            </div>
-                                            <h5 class="text-primary fw-bold">Efisiensi Informasi</h5>
-                                            <p class="mb-0"><?= $row['modal_description_2'] ?></p>
-                                        </div>
-                                        <div class="col-md-4 mb-4">
-                                            <div class="mb-3">
-                                                <i class="<?= $row['modal_icon_3'] ?> fa-3x text-primary"></i>
-                                            </div>
-                                            <h5 class="text-primary fw-bold">Digitalisasi Internal</h5>
-                                            <p class="mb-0"><?= $row['modal_description_3'] ?></p>
-                                        </div>
+                                        <h5 class="text-primary fw-bold">Efisiensi Informasi</h5>
+                                        <p class="mb-0"><?= $row['modal_description_2'] ?></p>
                                     </div>
-                                    <h6 class="text-center mt-5">
-                                        Kunjungi <a href="<?= $row['modal_cta_link'] ?>"
-                                            target="_blank"><?= $row['modal_cta_text'] ?></a>?
-                                    </h6>
+                                    <div class="col-md-4 mb-4">
+                                        <div class="mb-3">
+                                            <i class="<?= $row['modal_icon_3'] ?> fa-3x text-primary"></i>
+                                        </div>
+                                        <h5 class="text-primary fw-bold">Digitalisasi Internal</h5>
+                                        <p class="mb-0"><?= $row['modal_description_3'] ?></p>
+                                    </div>
                                 </div>
-                                <div class="modal-footer border-0">
-                                    <button class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                </div>
+                                <h6 class="text-center mt-5">
+                                    Kunjungi <a href="<?= $row['modal_cta_link'] ?>"
+                                        target="_blank"><?= $row['modal_cta_text'] ?></a>?
+                                </h6>
+                            </div>
+                            <div class="modal-footer border-0">
+                                <button class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
             <?php } ?>
         </div>
     </div>
@@ -463,15 +473,19 @@ $icons = [
 
 <!-- Faq Section -->
 <section class="faq-9 faq section light-background" id="faq">
-
     <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
 
-            <div class="col-lg-5" data-aos="fade-up">
-                <h2 class="faq-title">Punya Pertanyaan? Check out the FAQ</h2>
-                <p class="faq-description">Maecenas tempus tellus eget condimentum rhoncus sem quam semper
-                    libero sit amet adipiscing sem neque sed ipsum.</p>
-                <div class="faq-arrow d-none d-lg-block" data-aos="fade-up" data-aos-delay="200">
+            <!-- FAQ Intro -->
+            <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-up">
+                <h2 class="faq-title">Punya Pertanyaan? Temukan Jawabannya di Sini</h2>
+                <p class="faq-description">
+                    Kami telah mengumpulkan pertanyaan yang sering diajukan oleh pengguna. Temukan jawaban cepat dan
+                    jelas untuk kebutuhan Anda.
+                </p>
+                <div class="faq-arrow d-none d-lg-block mt-4" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Anda bisa tetap pakai SVG atau ilustrasi lain -->
+                    <!-- <img src="assets/img/faq-arrow.svg" alt="FAQ Arrow" width="180"> -->
                     <svg class="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -481,79 +495,74 @@ $icons = [
                 </div>
             </div>
 
+            <!-- FAQ Items -->
             <div class="col-lg-7" data-aos="fade-up" data-aos-delay="300">
                 <div class="faq-container">
 
                     <div class="faq-item faq-active">
-                        <h3>Non consectetur a erat nam at lectus urna duis?</h3>
+                        <h3>Apa itu ASZO Creative?</h3>
                         <div class="faq-content">
-                            <p>Anjas Busu pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus
-                                laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor
-                                rhoncus dolor purus non.</p>
+                            <p>ASZO Creative adalah agensi kreatif yang berfokus pada solusi visual dan digital,
+                                mulai dari branding, desain grafis, fotografi, hingga pembuatan konten digital yang
+                                membantu bisnis tampil menonjol dan profesional.</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
-                    </div><!-- End Faq item-->
+                    </div>
 
                     <div class="faq-item">
-                        <h3>Feugiat scelerisque varius morbi enim nunc faucibus?</h3>
+                        <h3>Layanan apa saja yang ditawarkan ASZO Creative?</h3>
                         <div class="faq-content">
-                            <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id
-                                interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus
-                                scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.
-                                Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                            <p>Kami menyediakan layanan branding, desain logo, desain kemasan, konten media sosial,
+                                fotografi produk, videografi, serta pembuatan website kreatif.</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
-                    </div><!-- End Faq item-->
+                    </div>
 
                     <div class="faq-item">
-                        <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
+                        <h3>Bagaimana proses kerja di ASZO Creative?</h3>
                         <div class="faq-content">
-                            <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci.
-                                Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl
-                                suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis
-                                convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                            </p>
+                            <p>Proses kami dimulai dari konsultasi kebutuhan, perumusan konsep, proses
+                                desain/produksi, revisi sesuai masukan, hingga serah final file atau peluncuran
+                                proyek. Semua dilakukan secara kolaboratif dan transparan.</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
-                    </div><!-- End Faq item-->
+                    </div>
 
                     <div class="faq-item">
-                        <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
+                        <h3>Berapa lama waktu pengerjaan satu proyek?</h3>
                         <div class="faq-content">
-                            <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id
-                                interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus
-                                scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.
-                                Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                            <p>Durasi pengerjaan tergantung kompleksitas proyek. Untuk desain logo biasanya 3–7 hari
+                                kerja, sementara branding lengkap bisa memakan waktu 2–3 minggu.</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
-                    </div><!-- End Faq item-->
+                    </div>
 
                     <div class="faq-item">
-                        <h3>Tempus quam pellentesque nec nam aliquam sem et tortor?</h3>
+                        <h3>Apakah ASZO Creative melayani klien dari luar kota?</h3>
                         <div class="faq-content">
-                            <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse
-                                in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl
-                                suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
-                            </p>
+                            <p>Ya. Kami melayani klien dari seluruh Indonesia, bahkan luar negeri. Komunikasi
+                                dilakukan melalui email, WhatsApp, atau meeting virtual.</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
-                    </div><!-- End Faq item-->
+                    </div>
 
                     <div class="faq-item">
-                        <h3>Perspiciatis quod quo quos nulla quo illum ullam?</h3>
+                        <h3>Bagaimana sistem pembayaran di ASZO Creative?</h3>
                         <div class="faq-content">
-                            <p>Enim ea facilis quaerat voluptas quidem et dolorem. Quis et consequatur non sed
-                                in suscipit sequi. Distinctio ipsam dolore et.</p>
+                            <p>Kami menerapkan sistem DP (uang muka) 50% di awal dan pelunasan 50% setelah proyek
+                                selesai. Metode pembayaran bisa melalui transfer bank atau e-wallet.</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
-                    </div><!-- End Faq item-->
+                    </div>
 
                 </div>
             </div>
 
         </div>
     </div>
-</section><!-- /Faq Section -->
+</section>
+
+<!-- /Faq Section -->
 
 <!-- Call To Action 2 Section -->
 <section id="call-to-action-2" class="call-to-action-2 section dark-background">
@@ -584,29 +593,29 @@ $team_query = mysqli_query($conn, "SELECT * FROM our_team ORDER BY id ASC");
         <h2 class="mb-5 fw-bold">Our Perfect Team</h2>
         <div class="row justify-content-center">
             <?php while ($row = mysqli_fetch_assoc($team_query)) { ?>
-                <div class="col-md-4 col-sm-6 mb-5">
-                    <div class="team-member">
-                        <img src="Aaszo/<?= $row['image_path'] ?>" class="rounded-circle mb-3" width="150" height="150"
-                            alt="<?= $row['name'] ?>" style="object-fit: cover;">
-                        <h5 class="mb-0 fw-bold"><?= $row['name'] ?></h5>
-                        <p class="text-danger small mb-1"><?= $row['role'] ?></p>
-                        <p class="small text-muted"><?= $row['description'] ?></p>
-                        <div>
-                            <?php if ($row['facebook_link']) : ?>
-                                <a href="<?= $row['facebook_link'] ?>" class="text-dark me-3" target="_blank"><i
-                                        class="fab fa-facebook-f"></i></a>
-                            <?php endif; ?>
-                            <?php if ($row['twitter_link']) : ?>
-                                <a href="<?= $row['twitter_link'] ?>" class="text-dark me-3" target="_blank"><i
-                                        class="fab fa-twitter"></i></a>
-                            <?php endif; ?>
-                            <?php if ($row['instagram_link']) : ?>
-                                <a href="<?= $row['instagram_link'] ?>" class="text-dark" target="_blank"><i
-                                        class="fab fa-instagram"></i></a>
-                            <?php endif; ?>
-                        </div>
+            <div class="col-md-4 col-sm-6 mb-5">
+                <div class="team-member">
+                    <img src="Aaszo/<?= $row['image_path'] ?>" class="rounded-circle mb-3" width="150" height="150"
+                        alt="<?= $row['name'] ?>" style="object-fit: cover;">
+                    <h5 class="mb-0 fw-bold"><?= $row['name'] ?></h5>
+                    <p class="text-danger small mb-1"><?= $row['role'] ?></p>
+                    <p class="small text-muted"><?= $row['description'] ?></p>
+                    <div>
+                        <?php if ($row['facebook_link']) : ?>
+                        <a href="<?= $row['facebook_link'] ?>" class="text-dark me-3" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <?php endif; ?>
+                        <?php if ($row['twitter_link']) : ?>
+                        <a href="<?= $row['twitter_link'] ?>" class="text-dark me-3" target="_blank"><i
+                                class="fab fa-twitter"></i></a>
+                        <?php endif; ?>
+                        <?php if ($row['instagram_link']) : ?>
+                        <a href="<?= $row['instagram_link'] ?>" class="text-dark" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <?php endif; ?>
                     </div>
                 </div>
+            </div>
             <?php } ?>
         </div>
     </div>
@@ -621,7 +630,8 @@ $team_query = mysqli_query($conn, "SELECT * FROM our_team ORDER BY id ASC");
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> -->
+        <p>Kontak Kami!</p>
     </div><!-- End Section Title -->
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
