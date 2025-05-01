@@ -468,7 +468,7 @@ $icons = [
         <div class="row">
 
             <div class="col-lg-5" data-aos="fade-up">
-                <h2 class="faq-title">Have a question? Check out the FAQ</h2>
+                <h2 class="faq-title">Punya Pertanyaan? Check out the FAQ</h2>
                 <p class="faq-description">Maecenas tempus tellus eget condimentum rhoncus sem quam semper
                     libero sit amet adipiscing sem neque sed ipsum.</p>
                 <div class="faq-arrow d-none d-lg-block" data-aos="fade-up" data-aos-delay="200">
