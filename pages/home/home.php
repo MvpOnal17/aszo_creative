@@ -487,7 +487,7 @@ $icons = [
                     <div class="faq-item faq-active">
                         <h3>Non consectetur a erat nam at lectus urna duis?</h3>
                         <div class="faq-content">
-                            <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus
+                            <p>Anjas Busu pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus
                                 laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor
                                 rhoncus dolor purus non.</p>
                         </div>
