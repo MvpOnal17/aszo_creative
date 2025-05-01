@@ -61,17 +61,17 @@ $row = mysqli_fetch_assoc($result);
             while ($row = mysqli_fetch_assoc($result)) {
                 $icon = $icons[$index % count($icons)];
             ?>
-            <div class="col-lg-3 col-md-6">
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="<?= $icon ?>"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h4><?= $row['title'] ?></h4>
-                        <p class="mb-0"><?= $row['description'] ?></p>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="<?= $icon ?>"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h4><?= $row['title'] ?></h4>
+                            <p class="mb-0"><?= $row['description'] ?></p>
+                        </div>
                     </div>
                 </div>
-            </div>
             <?php
                 $index++;
             }
@@ -103,14 +103,14 @@ $features_right = mysqli_query($conn, "SELECT feature_text FROM about_features W
                     <div class="col-md-6">
                         <ul class="feature-list">
                             <?php while ($f = mysqli_fetch_assoc($features_left)): ?>
-                            <li><i class="bi bi-check-circle-fill"></i> <?= htmlspecialchars($f['feature_text']) ?></li>
+                                <li><i class="bi bi-check-circle-fill"></i> <?= htmlspecialchars($f['feature_text']) ?></li>
                             <?php endwhile; ?>
                         </ul>
                     </div>
                     <div class="col-md-6">
                         <ul class="feature-list">
                             <?php while ($f = mysqli_fetch_assoc($features_right)): ?>
-                            <li><i class="bi bi-check-circle-fill"></i> <?= htmlspecialchars($f['feature_text']) ?></li>
+                                <li><i class="bi bi-check-circle-fill"></i> <?= htmlspecialchars($f['feature_text']) ?></li>
                             <?php endwhile; ?>
                         </ul>
                     </div>
@@ -191,17 +191,17 @@ $icons = [
                 <?php $i = 0;
                 $delay = 200;
                 while ($row = mysqli_fetch_assoc($left)) : ?>
-                <div class="feature-item text-end mb-5" data-aos="fade-right" data-aos-delay="<?= $delay ?>">
-                    <div class="d-flex align-items-center justify-content-end gap-4">
-                        <div class="feature-content">
-                            <h3><?= $row['title'] ?></h3>
-                            <p><?= $row['description'] ?></p>
-                        </div>
-                        <div class="feature-icon flex-shrink-0">
-                            <i class="<?= $icons[$i] ?? 'bi bi-star' ?>"></i>
+                    <div class="feature-item text-end mb-5" data-aos="fade-right" data-aos-delay="<?= $delay ?>">
+                        <div class="d-flex align-items-center justify-content-end gap-4">
+                            <div class="feature-content">
+                                <h3><?= $row['title'] ?></h3>
+                                <p><?= $row['description'] ?></p>
+                            </div>
+                            <div class="feature-icon flex-shrink-0">
+                                <i class="<?= $icons[$i] ?? 'bi bi-star' ?>"></i>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php $delay += 100;
                     $i++;
                 endwhile; ?>
@@ -211,7 +211,7 @@ $icons = [
             <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
                 <div class="phone-mockup text-center">
                     <?php if ($image): ?>
-                    <img src="Aaszo/<?= $image['image_path'] ?>" alt="Mockup Image" class="img-fluid">
+                        <img src="Aaszo/<?= $image['image_path'] ?>" alt="Mockup Image" class="img-fluid">
                     <?php endif; ?>
                 </div>
             </div>
@@ -220,17 +220,17 @@ $icons = [
             <div class="col-lg-4">
                 <?php $delay = 200;
                 while ($row = mysqli_fetch_assoc($right)) : ?>
-                <div class="feature-item mb-5" data-aos="fade-left" data-aos-delay="<?= $delay ?>">
-                    <div class="d-flex align-items-center gap-4">
-                        <div class="feature-icon flex-shrink-0">
-                            <i class="<?= $icons[$i] ?? 'bi bi-star' ?>"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h3><?= $row['title'] ?></h3>
-                            <p><?= $row['description'] ?></p>
+                    <div class="feature-item mb-5" data-aos="fade-left" data-aos-delay="<?= $delay ?>">
+                        <div class="d-flex align-items-center gap-4">
+                            <div class="feature-icon flex-shrink-0">
+                                <i class="<?= $icons[$i] ?? 'bi bi-star' ?>"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3><?= $row['title'] ?></h3>
+                                <p><?= $row['description'] ?></p>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php $delay += 100;
                     $i++;
                 endwhile; ?>
@@ -314,46 +314,46 @@ $icons = [
 
         <div class="swiper init-swiper">
             <script type="application/json" class="swiper-config">
-            {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                    "delay": 5000
-                },
-                "slidesPerView": "auto",
-                "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                },
-                "breakpoints": {
-                    "320": {
-                        "slidesPerView": 2,
-                        "spaceBetween": 40
+                {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": {
+                        "delay": 5000
                     },
-                    "480": {
-                        "slidesPerView": 3,
-                        "spaceBetween": 60
+                    "slidesPerView": "auto",
+                    "pagination": {
+                        "el": ".swiper-pagination",
+                        "type": "bullets",
+                        "clickable": true
                     },
-                    "640": {
-                        "slidesPerView": 4,
-                        "spaceBetween": 80
-                    },
-                    "992": {
-                        "slidesPerView": 6,
-                        "spaceBetween": 120
+                    "breakpoints": {
+                        "320": {
+                            "slidesPerView": 2,
+                            "spaceBetween": 40
+                        },
+                        "480": {
+                            "slidesPerView": 3,
+                            "spaceBetween": 60
+                        },
+                        "640": {
+                            "slidesPerView": 4,
+                            "spaceBetween": 80
+                        },
+                        "992": {
+                            "slidesPerView": 6,
+                            "spaceBetween": 120
+                        }
                     }
                 }
-            }
             </script>
             <div class="swiper-wrapper align-items-center mb-5">
                 <?php
                 $logos = mysqli_query($conn, "SELECT * FROM client_logos ORDER BY id ASC");
                 while ($logo = mysqli_fetch_assoc($logos)) {
                 ?>
-                <div class="swiper-slide">
-                    <img src="Aaszo/<?= $logo['image_path'] ?>" class="img-fluid" alt="Client Logo">
-                </div>
+                    <div class="swiper-slide">
+                        <img src="Aaszo/<?= $logo['image_path'] ?>" class="img-fluid" alt="Client Logo">
+                    </div>
                 <?php } ?>
             </div>
 
@@ -382,79 +382,79 @@ $icons = [
     <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row g-4">
             <?php while ($row = mysqli_fetch_assoc($studi_kasus_query)) { ?>
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-card p-4 border rounded-4 shadow-sm bg-white">
-                    <!-- Thumbnail -->
-                    <div class="mb-3">
-                        <img src="Aaszo/<?= $row['thumbnail_path'] ?>" alt="Thumbnail"
-                            class="img-fluid rounded-4 w-100">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card p-4 border rounded-4 shadow-sm bg-white">
+                        <!-- Thumbnail -->
+                        <div class="mb-3">
+                            <img src="Aaszo/<?= $row['thumbnail_path'] ?>" alt="Thumbnail"
+                                class="img-fluid rounded-4 w-100">
+                        </div>
+
+                        <!-- Judul -->
+                        <h3 class="fw-bold mb-1"><?= $row['title'] ?></h3>
+
+                        <!-- Tanggal -->
+                        <small class="text-muted d-block mb-2"><?= $row['date_display'] ?></small>
+
+                        <!-- Deskripsi -->
+                        <p class="mb-3"><?= $row['description'] ?></p>
+
+                        <!-- Button -->
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalStudi<?= $row['id'] ?>">
+                            Read More <i class="bi bi-arrow-right"></i>
+                        </a>
                     </div>
 
-                    <!-- Judul -->
-                    <h3 class="fw-bold mb-1"><?= $row['title'] ?></h3>
-
-                    <!-- Tanggal -->
-                    <small class="text-muted d-block mb-2"><?= $row['date_display'] ?></small>
-
-                    <!-- Deskripsi -->
-                    <p class="mb-3"><?= $row['description'] ?></p>
-
-                    <!-- Button -->
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalStudi<?= $row['id'] ?>">
-                        Read More <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- Modal -->
-                <div class="modal fade" id="modalStudi<?= $row['id'] ?>" tabindex="-1">
-                    <div class="modal-dialog modal-xl modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header border-0">
-                                <h5 class="modal-title fw-bold"><?= $row['modal_title'] ?></h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Tutup"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="mb-4 text-center">
-                                    <img src="Aaszo/<?= $row['modal_image_path'] ?>" alt="Preview"
-                                        class="img-fluid rounded-4 w-100">
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalStudi<?= $row['id'] ?>" tabindex="-1">
+                        <div class="modal-dialog modal-xl modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header border-0">
+                                    <h5 class="modal-title fw-bold"><?= $row['modal_title'] ?></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Tutup"></button>
                                 </div>
-                                <hr>
-                                <div class="row text-center mt-5">
-                                    <div class="col-md-4 mb-4">
-                                        <div class="mb-3">
-                                            <i class="<?= $row['modal_icon_1'] ?> fa-3x text-primary"></i>
-                                        </div>
-                                        <h5 class="text-primary fw-bold">Pelaporan Publik Realtime</h5>
-                                        <p class="mb-0"><?= $row['modal_description_1'] ?></p>
+                                <div class="modal-body">
+                                    <div class="mb-4 text-center">
+                                        <img src="Aaszo/<?= $row['modal_image_path'] ?>" alt="Preview"
+                                            class="img-fluid rounded-4 w-100">
                                     </div>
-                                    <div class="col-md-4 mb-4">
-                                        <div class="mb-3">
-                                            <i class="<?= $row['modal_icon_2'] ?> fa-3x text-primary"></i>
+                                    <hr>
+                                    <div class="row text-center mt-5">
+                                        <div class="col-md-4 mb-4">
+                                            <div class="mb-3">
+                                                <i class="<?= $row['modal_icon_1'] ?> fa-3x text-primary"></i>
+                                            </div>
+                                            <h5 class="text-primary fw-bold">Pelaporan Publik Realtime</h5>
+                                            <p class="mb-0"><?= $row['modal_description_1'] ?></p>
                                         </div>
-                                        <h5 class="text-primary fw-bold">Efisiensi Informasi</h5>
-                                        <p class="mb-0"><?= $row['modal_description_2'] ?></p>
-                                    </div>
-                                    <div class="col-md-4 mb-4">
-                                        <div class="mb-3">
-                                            <i class="<?= $row['modal_icon_3'] ?> fa-3x text-primary"></i>
+                                        <div class="col-md-4 mb-4">
+                                            <div class="mb-3">
+                                                <i class="<?= $row['modal_icon_2'] ?> fa-3x text-primary"></i>
+                                            </div>
+                                            <h5 class="text-primary fw-bold">Efisiensi Informasi</h5>
+                                            <p class="mb-0"><?= $row['modal_description_2'] ?></p>
                                         </div>
-                                        <h5 class="text-primary fw-bold">Digitalisasi Internal</h5>
-                                        <p class="mb-0"><?= $row['modal_description_3'] ?></p>
+                                        <div class="col-md-4 mb-4">
+                                            <div class="mb-3">
+                                                <i class="<?= $row['modal_icon_3'] ?> fa-3x text-primary"></i>
+                                            </div>
+                                            <h5 class="text-primary fw-bold">Digitalisasi Internal</h5>
+                                            <p class="mb-0"><?= $row['modal_description_3'] ?></p>
+                                        </div>
                                     </div>
+                                    <h6 class="text-center mt-5">
+                                        Kunjungi <a href="<?= $row['modal_cta_link'] ?>"
+                                            target="_blank"><?= $row['modal_cta_text'] ?></a>?
+                                    </h6>
                                 </div>
-                                <h6 class="text-center mt-5">
-                                    Kunjungi <a href="<?= $row['modal_cta_link'] ?>"
-                                        target="_blank"><?= $row['modal_cta_text'] ?></a>?
-                                </h6>
-                            </div>
-                            <div class="modal-footer border-0">
-                                <button class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                <div class="modal-footer border-0">
+                                    <button class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             <?php } ?>
         </div>
     </div>
@@ -571,7 +571,6 @@ $icons = [
             </div>
         </div>
     </div>
-
 </section><!-- /Call To Action 2 Section -->
 
 
@@ -585,29 +584,29 @@ $team_query = mysqli_query($conn, "SELECT * FROM our_team ORDER BY id ASC");
         <h2 class="mb-5 fw-bold">Our Perfect Team</h2>
         <div class="row justify-content-center">
             <?php while ($row = mysqli_fetch_assoc($team_query)) { ?>
-            <div class="col-md-4 col-sm-6 mb-5">
-                <div class="team-member">
-                    <img src="Aaszo/<?= $row['image_path'] ?>" class="rounded-circle mb-3" width="150" height="150"
-                        alt="<?= $row['name'] ?>" style="object-fit: cover;">
-                    <h5 class="mb-0 fw-bold"><?= $row['name'] ?></h5>
-                    <p class="text-danger small mb-1"><?= $row['role'] ?></p>
-                    <p class="small text-muted"><?= $row['description'] ?></p>
-                    <div>
-                        <?php if ($row['facebook_link']) : ?>
-                        <a href="<?= $row['facebook_link'] ?>" class="text-dark me-3" target="_blank"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <?php endif; ?>
-                        <?php if ($row['twitter_link']) : ?>
-                        <a href="<?= $row['twitter_link'] ?>" class="text-dark me-3" target="_blank"><i
-                                class="fab fa-twitter"></i></a>
-                        <?php endif; ?>
-                        <?php if ($row['instagram_link']) : ?>
-                        <a href="<?= $row['instagram_link'] ?>" class="text-dark" target="_blank"><i
-                                class="fab fa-instagram"></i></a>
-                        <?php endif; ?>
+                <div class="col-md-4 col-sm-6 mb-5">
+                    <div class="team-member">
+                        <img src="Aaszo/<?= $row['image_path'] ?>" class="rounded-circle mb-3" width="150" height="150"
+                            alt="<?= $row['name'] ?>" style="object-fit: cover;">
+                        <h5 class="mb-0 fw-bold"><?= $row['name'] ?></h5>
+                        <p class="text-danger small mb-1"><?= $row['role'] ?></p>
+                        <p class="small text-muted"><?= $row['description'] ?></p>
+                        <div>
+                            <?php if ($row['facebook_link']) : ?>
+                                <a href="<?= $row['facebook_link'] ?>" class="text-dark me-3" target="_blank"><i
+                                        class="fab fa-facebook-f"></i></a>
+                            <?php endif; ?>
+                            <?php if ($row['twitter_link']) : ?>
+                                <a href="<?= $row['twitter_link'] ?>" class="text-dark me-3" target="_blank"><i
+                                        class="fab fa-twitter"></i></a>
+                            <?php endif; ?>
+                            <?php if ($row['instagram_link']) : ?>
+                                <a href="<?= $row['instagram_link'] ?>" class="text-dark" target="_blank"><i
+                                        class="fab fa-instagram"></i></a>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
-            </div>
             <?php } ?>
         </div>
     </div>
