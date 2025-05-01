@@ -84,8 +84,10 @@ include 'conf/conf.php';
                     </div>
                     <div class="social-links d-flex mt-4">
                         <a href=""><i class="bi bi-twitter-x"></i></a>
-                        <a href=""><i class="bi bi-facebook"></i></a>
-                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61575265455639&locale=id_ID" target="_blank"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/aszo_creative/" target="_blank"><i
+                                class="bi bi-instagram"></i></a>
                         <a href=""><i class="bi bi-tiktok"></i></a>
                     </div>
                 </div>
