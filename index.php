@@ -47,12 +47,12 @@ include 'conf/conf.php';
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#case">Services</a></li>
+                    <li><a href="#home" class="active">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#features">Fitur</a></li>
+                    <li><a href="#case">Studi Kasus</a></li>
                     <li><a href="#protofolio">Portofolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Kontak Kami</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
