@@ -675,7 +675,7 @@ $team_query = mysqli_query($conn, "SELECT * FROM our_team ORDER BY id ASC");
 
             <div class="col-lg-7">
                 <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
-                    <h3>Get In Touch</h3>
+                    <h3>Hubungi Kami !!!</h3>
                     <p>Tim kami siap menjawab semua pertanyaan Anda seputar layanan, kerja sama, atau konsultasi lebih
                         lanjut.</p>
 
