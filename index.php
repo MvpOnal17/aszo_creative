@@ -50,8 +50,8 @@ include 'conf/conf.php';
                     <li><a href="#home" class="active">Beranda</a></li>
                     <li><a href="#about">Tentang Kami</a></li>
                     <li><a href="#features">Fitur</a></li>
-                    <li><a href="#case">Studi Kasus</a></li>
-                    <li><a href="#protofolio">Portofolio</a></li>
+                    <li><a href="#case">Studi Kasus & Portofolio</a></li>
+                    <!-- <li><a href="#protofolio">Portofolio</a></li> -->
                     <li><a href="#contact">Kontak Kami</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
